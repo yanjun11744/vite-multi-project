@@ -84,6 +84,12 @@ npm run dev --page=页面名称
 npm run build --page=页面名称
 ```
 
+全部打包：
+
+```js
+npm run build:all
+```
+
 测试环境打包：
 
 ```js

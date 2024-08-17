@@ -130,7 +130,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, `dist/templates`), // 输出整体目录
     assetsInlineLimit: 4096, //小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求
-    emptyOutDir: true, //Vite 会在构建时清空该目录
+    emptyOutDir: false, //Vite 会在构建时清空该目录
     terserOptions: {
       compress: {
         keep_infinity: true, // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
@@ -170,6 +170,5 @@ export default defineConfig({
         renameHtmlPlugin(),
       ]
     }
-  },
-  emptyOutDir: true, // 清空输出目录
+  }
 })

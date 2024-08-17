@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --mode development",
     "build": "vite build",
+    "build:all": "node scripts/build-all.mjs",
     "preview": "vite preview",
     "new:page": "node ./scripts/index.mjs"
   },
