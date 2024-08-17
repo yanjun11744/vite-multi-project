@@ -107,7 +107,7 @@ export default defineConfig({
     https: false // 是否开启 https
   },
   build: {
-    outDir: path.resolve(__dirname, `dist/${npm_config_page}`), // 指定输出路径
+    outDir: path.resolve(__dirname, `dist/templates`), // 输出整体目录
     assetsInlineLimit: 4096, //小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求
     emptyOutDir: true, //Vite 会在构建时清空该目录
     terserOptions: {
@@ -124,20 +124,21 @@ export default defineConfig({
       input: getEnterPages(),
       buildEnd: buildEndFn(npm_config_page),
       output: {
-        assetFileNames: '[ext]/[name]-[hash].[ext]', //静态文件输出的文件夹名称
-        chunkFileNames: 'js/[name]-[hash].js',  //chunk包输出的文件夹名称
-        entryFileNames: 'js/[name]-[hash].js',  //入口文件输出的文件夹名称
+        assetFileNames: `assets/${npm_config_page}/[name]-[hash].[ext]`, // 资源输出路径
+        chunkFileNames: `assets/${npm_config_page}/js/[name]-[hash].js`,  // chunk包输出的路径
+        entryFileNames: `assets/${npm_config_page}/js/[name]-[hash].js`,  // 入口文件输出的路径
         compact: true,
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
             return id
-              .toString()
-              .split('node_modules/')[1]
-              .split('/')[0]
-              .toString() // 拆分多个vendors
+                .toString()
+                .split('node_modules/')[1]
+                .split('/')[0]
+                .toString();
           }
         }
       }
-    },
-  }
+    }
+  },
+  emptyOutDir: true, // 清空输出目录
 })
