@@ -12,11 +12,13 @@
 │   ├── index.mjs        //创建子页面的脚本
 │   └── multiPages.json  //子页面描述说明集合文件
 ├── src
-│   ├── arrets       //公共静态资源
+│   ├── assets       //公共静态资源
 │   ├── components   //公共组件
 │   ├── store        //pinia 共享状态存储库
 │   ├── utils        //公共方法
 │   └── Projects     //多页面文件夹
+│   └── theme.yaml     //主题配置文件
+│   └── settings.yaml    //主题设置选项
 ├── types  //ts 声明文件
 ├── .env.development   //开发环境-环境变量
 ├── .env.production    //生产环境-环境变量
