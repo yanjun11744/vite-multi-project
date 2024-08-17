@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: () => import('@projects/host/views/index.vue'),
+      component: () => import('@projects/index/views/index.vue'),
       meta: { title: '首页' }
     }
   ]

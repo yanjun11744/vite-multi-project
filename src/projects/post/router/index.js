@@ -12,8 +12,8 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'page1',
-      component: () => import('@projects/page1/views/example.vue'),
+      name: 'post',
+      component: () => import('@projects/post/views/example.vue'),
       meta: {title: '案例1'}
     }
   ]

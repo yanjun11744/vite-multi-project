@@ -6,7 +6,7 @@
  * @Description: 
 -->
 <template>
-  <h3>这是首页323</h3>
+  <div>index</div>
 </template>
 
 <script setup></script>
