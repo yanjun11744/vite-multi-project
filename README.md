@@ -5,7 +5,7 @@
 ├── .husky   //git hook钩子
 │   ├── commit-msg //规范 commit message 信息
 │   └── verify-commit-msg.mjs  //脚本：commitlint 替代方案
-├── dist //打包输出目录
+├── templates //打包输出目录
 ├── scripts //存放一些脚本
 │   ├── template         //创建子页面的js模版
 │   ├── template-ts      //创建子页面的ts模版
@@ -17,8 +17,6 @@
 │   ├── store        //pinia 共享状态存储库
 │   ├── utils        //公共方法
 │   └── Projects     //多页面文件夹
-│   └── theme.yaml    //主题配置文件
-│   └── settings.yaml     //主题设置选项
 ├── types  //ts 声明文件
 ├── .env.development   //开发环境-环境变量
 ├── .env.production    //生产环境-环境变量
@@ -34,6 +32,8 @@
 ├── tsconfig.node.json //vite在node环境中的 ts 规则
 ├── vite.config.ts     //vite 配置
 ├── package.json
+├── theme.yaml         //主题配置文件
+├── settings.yaml      //主题设置选项
 
 ```
 

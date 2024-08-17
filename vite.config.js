@@ -16,7 +16,6 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import chalk from 'chalk' // console高亮
-import copy from 'rollup-plugin-copy';
 
 // 引入多页面配置文件
 const project = require('./scripts/multiPages.json')
@@ -128,7 +127,7 @@ export default defineConfig({
     https: false // 是否开启 https
   },
   build: {
-    outDir: path.resolve(__dirname, `dist/templates`), // 输出整体目录
+    outDir: path.resolve(__dirname, `templates`), // 输出整体目录
     assetsInlineLimit: 4096, //小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求
     emptyOutDir: false, //Vite 会在构建时清空该目录
     terserOptions: {
@@ -160,13 +159,6 @@ export default defineConfig({
         }
       },
       plugins: [
-        copy({
-          targets: [
-            { src: 'src/theme.yaml', dest: 'dist' }, // 复制文件到 dist 目录
-            { src: 'src/settings.yaml', dest: 'dist' }, // 复制文件到 dist 目录
-          ],
-          hook: 'writeBundle', // 确保在写入包时进行复制
-        }),
         renameHtmlPlugin(),
       ]
     }

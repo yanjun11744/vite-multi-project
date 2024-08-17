@@ -4,7 +4,7 @@ import path from 'path';
 
 // 读取 multiPages.json 文件
 const multiPagesPath = path.resolve('scripts', 'multiPages.json');
-const distPath = path.resolve('dist'); // 确保这是你的输出目录
+const distPath = path.resolve('templates'); // 确保这是你的输出目录
 
 try {
     const multiPages = JSON.parse(readFileSync(multiPagesPath, 'utf-8'));
@@ -12,9 +12,9 @@ try {
     const clearDist = () => {
         try {
             rmSync(distPath, { recursive: true, force: true });
-            console.log('已清理 dist 目录');
+            console.log('已清理 templates 目录');
         } catch (error) {
-            console.error('清理 dist 目录失败:', error.message);
+            console.error('清理 templates 目录失败:', error.message);
         }
     };
 
