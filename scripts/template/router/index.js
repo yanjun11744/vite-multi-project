@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
 const router = createRouter({
   history: createWebHashHistory(), // hash模式：createWebHashHistory，history模式：createWebHistory
   routes: [
@@ -18,4 +19,5 @@ router.afterEach((to, from, next) => {
   }
   window.scrollTo(0, 0)
 })
+
 export default router

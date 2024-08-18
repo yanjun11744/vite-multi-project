@@ -6,7 +6,7 @@ const router = createRouter({
       path: '/',
       name: 'archives',
       component: () => import('@projects/archives/views/index.vue'),
-      meta: { title: '文章' }
+      meta: { title: '文章归档' }
     }
   ]
 })

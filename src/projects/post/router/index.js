@@ -1,20 +1,13 @@
-/*
- * @Author: Shber
- * @Date: 2024-01-19 14:59:13
- * @LastEditors: Shber
- * @LastEditTime: 2024-01-22 19:55:36
- * @Description: 
- */
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(), // hash模式：createWebHashHistory，history模式：createWebHistory
   routes: [
     {
       path: '/',
-      name: 'post',
-      component: () => import('@projects/post/views/example.vue'),
-      meta: {title: '文章详情'}
+      name: 'index',
+      component: () => import('@projects/post/views/index.vue'),
+      meta: { title: '文章详情' }
     }
   ]
 })

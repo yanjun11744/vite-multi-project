@@ -1,18 +1,14 @@
 <!--
  * @Author: Shber
- * @Date: 2023-10-16 09:38:23
+ * @Date: 2024-01-22 19:46:32
  * @LastEditors: Shber
- * @LastEditTime: 2024-01-19 15:06:39
- * @Description:
+ * @LastEditTime: 2024-01-26 16:52:10
+ * @Description: 
 -->
-
 <template>
-    <div id="content">
-        <RouterView />
-    </div>
+  <router-view></router-view>
 </template>
-  
-  <script setup>
-  </script>
-  
-  
+<script setup></script>
+<style lang="scss" scoped>
+
+</style>
