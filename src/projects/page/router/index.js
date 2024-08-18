@@ -12,9 +12,9 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'post',
+      name: 'page',
       component: () => import('@projects/page/views/example.vue'),
-      meta: {title: '案例2'}
+      meta: {title: '独立页面'}
     }
   ]
 })

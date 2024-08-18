@@ -1,5 +1,7 @@
 <template>
-  <h3>首页</h3>
+  <div>
+    <h3>这是首页</h3>
+  </div>
 </template>
 
 <script setup></script>
