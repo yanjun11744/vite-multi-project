@@ -6,13 +6,14 @@
  * @Description: 
 -->
 <template>
-  <HelloWorld/>
-  <div id="img2">
-    212
-    <!-- <img src="/src/assets/img/no-data.png" alt="img" > -->
+  <div>
+    <HelloWorld/>
+    <div id="img2">
+      212
+      <!-- <img src="/src/assets/img/no-data.png" alt="img" > -->
+    </div>
+    <el-button type="primary"><el-icon><i-ep-ChatLineRound/></el-icon>{{testName}}</el-button>
   </div>
-  <el-button type="primary"><el-icon><i-ep-ChatLineRound/></el-icon>{{testName}}</el-button>
-
 </template>
 <script setup>
   import { ref } from 'vue'

@@ -6,13 +6,15 @@
  * @Description: 
 -->
 <template>
-  <HelloWorld/>
-  <div id="img1">
-    <el-image :src="IMG" alt="img" />
+  <div>
+    <HelloWorld/>
+    <div id="img1">
+      <el-image :src="IMG" alt="img" />
+    </div>
+    <el-button type="primary"><el-icon><i-ep-Search /></el-icon>按钮央视</el-button>
+    1233
+    {{testName}}
   </div>
-  <el-button type="primary"><el-icon><i-ep-Search /></el-icon>按钮央视</el-button>
-  1233
-  {{testName}}
 </template>
 <script setup>
   import { ref } from 'vue'
