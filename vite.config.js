@@ -15,7 +15,8 @@ import Components from 'unplugin-vue-components/vite' // 组件自动引入
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import chalk from 'chalk' // console高亮
+import chalk from 'chalk'
+import renameHtmlPlugin from "./scripts/plugins/vite-plugin-rename-html.js"; // console高亮
 
 // 引入多页面配置文件
 const project = require('./scripts/multiPages.json')
@@ -50,26 +51,6 @@ const getEnterPages = () => {
 const buildEndFn = (name)=>{
   console.log(`🚀🚀🚀 ${chalk.green.bold('项目构建')} ➡️   ${chalk.white.bgGreen.bold(` ${name} `)} 🇨🇳`);
 }
-
-//重命名html为项目名
-const renameHtmlPlugin = () => {
-  return {
-    name: 'rename-html',
-    generateBundle(options, bundle) {
-      const oldFileName = 'index.html';
-      const newFileName = `${npm_config_page}.html`;
-
-      if (bundle[oldFileName]) {
-        bundle[newFileName] = {
-          ...bundle[oldFileName],
-          fileName: newFileName,
-        };
-        // 删除旧的 index.html
-        delete bundle[oldFileName];
-      }
-    },
-  };
-};
 
 export default defineConfig({
   root: path.resolve(__dirname, `./src/projects/${npm_config_page}`),
@@ -159,7 +140,7 @@ export default defineConfig({
         }
       },
       plugins: [
-        renameHtmlPlugin(),
+        renameHtmlPlugin(`${npm_config_page}`),
       ]
     }
   }
