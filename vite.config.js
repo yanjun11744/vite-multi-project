@@ -16,7 +16,8 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import chalk from 'chalk'
-import renameHtmlPlugin from "./scripts/plugins/vite-plugin-rename-html.js"; // console高亮
+import renameHtmlPlugin from "./scripts/plugins/vite-plugin-rename-html.js";
+import {replaceSrcWithTh} from "./scripts/plugins/vite-plugin-replace-src-with-th.js"; // console高亮
 
 // 引入多页面配置文件
 const project = require('./scripts/multiPages.json')
@@ -142,6 +143,7 @@ export default defineConfig({
       plugins: [
         //html重命名插件
         renameHtmlPlugin(`${npm_config_page}`),
+        replaceSrcWithTh()
       ]
     }
   }
