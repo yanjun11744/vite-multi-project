@@ -29,20 +29,20 @@ const errorLog = (error) => console.log(chalk.red(`${error}`))
 const getEnterPages = () => {
   if (!npm_config_page)
     errorLog(
-      '⚠️ 警告 -- 请在命令行后以 `--page=页面名称` 格式指定页面名称！'
+        '⚠️ 警告 -- 请在命令行后以 `--page=页面名称` 格式指定页面名称！'
     )
   const filterArr = project.filter(
-    (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
+      (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
   )
   if (!filterArr.length)
     errorLog(
-      '⚠️ 警告 -- 不存在此页面，请检查页面名称！'
+        '⚠️ 警告 -- 不存在此页面，请检查页面名称！'
     )
 
   return {
     [npm_config_page]: path.resolve(
-      __dirname,
-      `src/projects/${npm_config_page}/index.html`
+        __dirname,
+        `src/projects/${npm_config_page}/index.html`
     )
   }
 }
@@ -140,6 +140,7 @@ export default defineConfig({
         }
       },
       plugins: [
+        //html重命名插件
         renameHtmlPlugin(`${npm_config_page}`),
       ]
     }
